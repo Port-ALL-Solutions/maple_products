@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="maple_product" model="product.template">
+            <field name="name">Maple Syrup</field>				
+            <field name="default_code">M</field>		
+            <field name="type">product</field>
+            <field name="sale_ok">1</field>
+            <field name="purchase_ok">1</field>
+            <field name="maple_syrup">1</field>
+            <field name="categ_id" ref="maple_category"/>
+      </record>	
+
+        <record id="maple_product_reg_golden" model="product.product">
+            <field name="product_tmpl_id" ref="maple_product" />              
+            <field name="description_sale">Organic Golden Maple Syrup</field>
+            <field name="default_code">MBD</field>        
+            <field name="type">product</field>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('attribute_type_bio'),ref('attribute_light_golden'), ref('attribute_flaw_none')])]"/> 
+      </record> 
+
+        <record id="maple_product_reg_amber" model="product.product">
+            <field name="product_tmpl_id" ref="maple_product" />              
+            <field name="description_sale">Organic Amber Maple Syrup</field>
+            <field name="default_code">MGR</field>        
+            <field name="type">product</field>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('attribute_type_bio'),ref('attribute_light_amber'), ref('attribute_flaw_none')])]"/> 
+      </record> 
+
+
+	</data>
+</odoo>
